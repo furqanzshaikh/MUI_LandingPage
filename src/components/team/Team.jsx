@@ -14,6 +14,29 @@ function Team() {
     borderRadius: 0
   };
 
+  const teamMembers = [
+    {
+      img: img1,
+      name: "Mark Carter",
+      description: "Lorem ipsum dolor sit amet."
+    },
+    {
+      img: img2,
+      name: "Elijah Carter",
+      description: "Lorem ipsum dolor sit amet."
+    },
+    {
+      img: img3,
+      name: "Marcus Thompson",
+      description: "Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      img: img4,
+      name: "Isabella Lopez",
+      description: "Lorem ipsum dolor sit."
+    }
+  ];
+
   return (
     <Box id='team' textAlign="center" sx={{ padding: "2vw" }} >
       <Typography variant="h4" gutterBottom color={iconColor}>
@@ -23,43 +46,17 @@ function Team() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dolorum accusantium doloribus?
       </Typography>
       <Grid container spacing={3} justifyContent="center" marginTop={4}>
-        {/* Displaying four cards side by side */}
-        <Grid item xs={6} sm={3}>
-          <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-            <Avatar src={img1} alt="Service 1" sx={{ ...imgstyles }} className="centered-avatar" />
-            <Box>
-              <Typography variant="subtitle1" color="white">Mark Carter</Typography>
-              <Typography variant="body2" color="white">Lorem ipsum dolor sit amet.</Typography>
-            </Box>
-          </Card>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-            <Avatar src={img2} alt="Service 2" sx={{ ...imgstyles }} className="centered-avatar" />
-            <Box>
-              <Typography variant="subtitle1" color="white">Elijah Carter</Typography>
-              <Typography variant="body2" color="white">Lorem ipsum dolor sit amet.</Typography>
-            </Box>
-          </Card>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-            <Avatar src={img3} alt="Service 3" sx={{ ...imgstyles }} className="centered-avatar" />
-            <Box>
-              <Typography variant="subtitle1" color="white">Marcus Thompson</Typography>
-              <Typography variant="body2" color="white">Lorem ipsum dolor sit amet consectetur.</Typography>
-            </Box>
-          </Card>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-            <Avatar src={img4} alt="Service 4" sx={{ ...imgstyles}}  />
-            <Box>
-              <Typography variant="subtitle1" color="white">Isabella Lopez</Typography>
-              <Typography variant="body2" color="white">Lorem ipsum dolor sit.</Typography>
-            </Box>
-          </Card>
-        </Grid>
+        {teamMembers.map((member, index) => (
+          <Grid key={index} item xs={6} sm={3}>
+            <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
+              <Avatar  src={member.img} alt={member.name} sx={{ ...imgstyles ,marginBottom:2}} className="centered-avatar" />
+              <Box>
+                <Typography mb={1} variant="subtitle1" color="white">{member.name}</Typography>
+                <Typography variant="body2" color="white">{member.description}</Typography>
+              </Box>
+            </Card>
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );

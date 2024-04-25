@@ -11,7 +11,7 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
 }));
 
-const navbtnstyle = { color: "#f8f9fa" };
+const navbtnstyle = { color: "#f8f9fa",cursor:'pointer' };
 
 function Navbar() {
   const isSmallScreen = useMediaQuery('(max-width:800px)');
@@ -35,7 +35,7 @@ function Navbar() {
   return (
     <RootAppBar sx={{ backgroundColor: "#212529", padding: "1vw 0" }} position="sticky">
       <Toolbar sx={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <TitleTypography variant="h6" sx={{ display: 'flex', alignItems: 'center' }}>
+        <TitleTypography sx={navbtnstyle} onClick={() => scrollToSection('home')} variant="h6" >
           Logo
         </TitleTypography>
         {isSmallScreen ? (
@@ -57,7 +57,6 @@ function Navbar() {
               onClose={handleMenuClose}
             >
               <MenuItem onClick={() => { scrollToSection('features'); handleMenuClose(); }}>Features</MenuItem>
-              <MenuItem onClick={() => { scrollToSection('home'); handleMenuClose(); }}>Home</MenuItem>
               <MenuItem onClick={() => { scrollToSection('about'); handleMenuClose(); }}>About</MenuItem>
               <MenuItem onClick={() => { scrollToSection('contact'); handleMenuClose(); }}>Contact</MenuItem>
               <MenuItem onClick={() => { scrollToSection('testimonials'); handleMenuClose(); }}>Testimonials</MenuItem>
@@ -68,14 +67,14 @@ function Navbar() {
           </>
         ) : (
           <>
+            <Button sx={navbtnstyle} onClick={() => scrollToSection('gallery')}>Gallery</Button>
+            <Button sx={navbtnstyle} onClick={() => scrollToSection('services')}>Services</Button>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('features')}>Features</Button>
-            <Button sx={navbtnstyle} onClick={() => scrollToSection('home')}>Home</Button>
-            <Button sx={navbtnstyle} onClick={() => scrollToSection('about')}>About</Button>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('contact')}>Contact</Button>
+            <Button sx={navbtnstyle} onClick={() => scrollToSection('about')}>About</Button>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('testimonials')}>Testimonials</Button>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('team')}>Team</Button>
-            <Button sx={navbtnstyle} onClick={() => scrollToSection('services')}>Services</Button>
-            <Button sx={navbtnstyle} onClick={() => scrollToSection('gallery')}>Gallery</Button>
+           
           </>
         )}
       </Toolbar>
