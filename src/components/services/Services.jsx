@@ -39,8 +39,8 @@ function Service() {
   };
 
   return (
-    <Box id='services' textAlign="center" sx={{ padding: "2vw" }}>
-      <Typography mb={3}  variant="h4" gutterBottom color={iconColor}>
+    <Box id='services' textAlign="center" sx={{ padding: "2vw", backgroundColor: '#212121',marginBottom:'3rem' }}>
+      <Typography mb={3} variant="h4" gutterBottom color={iconColor}>
         Our Services
       </Typography>
       <Typography variant="body1" gutterBottom color={iconColor}>
@@ -49,9 +49,9 @@ function Service() {
       <Grid container spacing={3} justifyContent="center" marginTop={4}>
         {Object.entries(servicesData).map(([key, value]) => (
           <Grid key={key} item xs={12} sm={6} md={4}>
-            <Card sx={{ backgroundColor: 'transparent' }}>
-              <CardContent sx={{display:'flex',flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-                <Box sx={{ backgroundColor: '#3f51b5', borderRadius: '50%', width: '80px', height: '80px', display: 'flex', justifyContent: 'center', alignItems: 'center',marginBottom:'10px' }}>
+            <Card sx={{ backgroundColor: 'black', boxShadow: 'none' }}>
+              <CardContent sx={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center' }}>
+                <Box sx={{ backgroundColor: '#3f51b5', borderRadius: '50%', width: '80px', height: '80px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom:'10px' }}>
                   {value.icon}
                 </Box>
                 <Box>

@@ -11,7 +11,7 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
   flexGrow: 1,
 }));
 
-const navbtnstyle = { color: "#f8f9fa",cursor:'pointer' };
+const navbtnstyle = { color: "#f8f9fa",cursor:'pointer',fontSize:15 };
 
 function Navbar() {
   const isSmallScreen = useMediaQuery('(max-width:800px)');
@@ -35,7 +35,7 @@ function Navbar() {
   return (
     <RootAppBar sx={{ backgroundColor: "#212529", padding: "1vw 0" }} position="sticky">
       <Toolbar sx={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        <TitleTypography sx={navbtnstyle} onClick={() => scrollToSection('home')} variant="h6" >
+        <TitleTypography sx={navbtnstyle} style={{fontSize:25}} onClick={() => scrollToSection('home')} variant="h6" >
           Logo
         </TitleTypography>
         {isSmallScreen ? (
@@ -66,7 +66,7 @@ function Navbar() {
             </Menu>
           </>
         ) : (
-          <>
+          <Box sx={{display:'flex' , gap:3}}>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('gallery')}>Gallery</Button>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('services')}>Services</Button>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('features')}>Features</Button>
@@ -75,7 +75,7 @@ function Navbar() {
             <Button sx={navbtnstyle} onClick={() => scrollToSection('testimonials')}>Testimonials</Button>
             <Button sx={navbtnstyle} onClick={() => scrollToSection('team')}>Team</Button>
            
-          </>
+          </Box>
         )}
       </Toolbar>
     </RootAppBar>

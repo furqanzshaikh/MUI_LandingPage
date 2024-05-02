@@ -10,8 +10,17 @@ function Team() {
   const imgstyles = {
     width: '100%',
     height: '30vh',
-    objectFit: 'contain',
-    borderRadius: 0
+    objectFit: 'cover',
+    borderRadius: 2
+  };
+
+  const cardStyles = {
+    backgroundColor: '#212121',
+    padding: '20px 10px 40px 10px',
+    borderRadius: '16px',
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+    height:260,
+
   };
 
   const teamMembers = [
@@ -48,10 +57,10 @@ function Team() {
       <Grid container spacing={3} justifyContent="center" marginTop={4}>
         {teamMembers.map((member, index) => (
           <Grid key={index} item xs={6} sm={3}>
-            <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-              <Avatar  src={member.img} alt={member.name} sx={{ ...imgstyles ,marginBottom:2}} className="centered-avatar" />
-              <Box>
-                <Typography mb={1} variant="subtitle1" color="white">{member.name}</Typography>
+            <Card sx={cardStyles}>
+              <Avatar  src={member.img} alt={member.name} sx={imgstyles} />
+              <Box mt={2}>
+                <Typography variant="subtitle1" color="white">{member.name}</Typography>
                 <Typography variant="body2" color="white">{member.description}</Typography>
               </Box>
             </Card>

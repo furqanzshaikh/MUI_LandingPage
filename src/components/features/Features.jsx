@@ -23,22 +23,33 @@ const cardData = [
 
 const Features = () => {
   const styles = {
-    card: { backgroundColor: "#343a40", color: "#f8f9fa" },
+    card: { 
+      backgroundColor: "#343a40", 
+      color: "#f8f9fa", 
+      padding: "20px", // Added padding
+      borderRadius: "10px", // Added border radius
+      
+    },
     cardContent: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center",
       flexDirection: "column",
+      height: "100%",
+    },
+    component: {
+      padding: "0 20px", // Added padding to the component
+      marginBottom: "3rem", // Added margin bottom to the component
     },
   };
 
   return (
-    <Box id='features' sx={{ padding: "0 10px", marginBottom: "6vw" }}>
-      <Typography variant="h3" align="center" gutterBottom sx={{ marginBottom: "4rem" }}>
+    <Box id='features' sx={{ ...styles.component }}>
+      <Typography variant="h3" align="center" gutterBottom sx={{ marginBottom: "2rem" }}>
         Features
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         {cardData.map((item, index) => (
           <Grid key={index} item xs={12} sm={6} md={3}>
             <Card sx={{ ...styles.card }}>

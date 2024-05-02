@@ -36,14 +36,14 @@ const Testimonial = () => {
   ];
 
   return (
-    <Box id='testimonials' textAlign="center" sx={{ padding: "2vw" }} mb={3} mt={3}>
+    <Box id='testimonials' textAlign="center" sx={{ padding: "2vw", backgroundColor: '#212121' }} mb={3} mt={3}>
       <Typography variant="h3" gutterBottom color="white" mb={3}>
         WHAT OUR CLIENTS SAY
       </Typography>
       <Grid container spacing={3} justifyContent="center">
         {testimonialData.map((testimonial, index) => (
           <Grid key={index} item xs={12} sm={6} md={4}>
-            <Card sx={{ backgroundColor: 'transparent' }}>
+            <Card sx={{ backgroundColor: 'black', boxShadow: 'none' }}>
               <Box sx={{ display: 'flex', alignItems: 'initial', padding: '20px' }}>
                 <Avatar src={testimonial.avatar} sx={{ margin: '20px 0' }} />
                 <Box sx={{ textAlign: 'initial', marginLeft: '20px' }}>

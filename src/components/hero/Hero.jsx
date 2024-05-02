@@ -26,7 +26,7 @@ const Hero = () => {
     button: {
       marginBottom: '2rem',
       backgroundColor: "#343a40",
-      padding: '1vw 2vw',
+      padding: '0.7vw 2vw',
       '&:hover': {
         backgroundColor: '#212529',
       },
@@ -36,8 +36,8 @@ const Hero = () => {
   return (
     <Box sx={styles.container} id='home'>
       <Box sx={styles.text}>
-        <Typography sx={{ color: "#e9ecef", fontWeight: 400 }} variant="h3">GameVerse</Typography>
-        <Typography sx={{ color: "#e9ecef", fontWeight: 400 }} variant="h3">Unleash Your Gaming Passion!</Typography>
+        <Typography sx={{ color: "#ffff", fontWeight: 500 }} variant="h3">GameVerse</Typography>
+        <Typography sx={{ color: "#ffff", fontWeight: 500 }} variant="h3">Unleash Your Gaming Passion!</Typography>
       </Box>
       <Button variant="contained" sx={styles.button}>Learn More</Button>
     </Box>
